@@ -1,12 +1,15 @@
-let express = require('express');
+//Install express server
+const express = require('express');
+const path = require('path');
 
-let app = express();
+const app = express();
 
-app.use(express.static(__dirname + '/dist/dnic-frontend'));
+// Serve only the static files form the dist directory
+app.use(express.static('./dist/dnic-frontend'));
 
-app.get('/*', (req, resp) => {
-  resp.set('Access-Control-Allow-Origin', 'https://courseapp191126backend.herokuapp.com')
-  resp.sendFile(__dirname+'/dist/prototip/index.html')
-});
+app.get('/*', (req, res) =>
+  res.sendFile('index.html', {root: 'dist/dnic-frontend/'}),
+);
 
-app.listen(process.env.PORT || 4200)
+// Start the app by listening on the default Heroku port
+app.listen(process.env.PORT || 8080);
