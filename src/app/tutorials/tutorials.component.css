@@ -1,0 +1,9 @@
+.mainbar{
+  background-color: lightgrey;
+  max-height: 280px;
+  margin-left: 60px;
+}
+ul{
+  text-decoration: none;
+  list-style: none;
+}

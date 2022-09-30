@@ -1,0 +1,18 @@
+<div class="row">
+  <ngs-code-editor
+    [theme]="theme"
+    [codeModel]="codeModel"
+    [options]="options"
+    (valueChanged)="onCodeChanged($event)">
+  </ngs-code-editor>
+  <button type="button" class="btn btn-secondary col-2" style="margin: 5px" (submit)="submit()">
+    Submit Solution
+  </button>
+  <button type="button" class="btn btn-light col-2" (click)="resetEditor()" style="margin: 5px">
+    Reset
+  </button>
+
+  <div class="row">
+    {{output}}
+  </div>
+</div>
