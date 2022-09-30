@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('./dist/dnic-frontend'));
 
 app.get('/*', (req, res) =>
-  res.sendFile('index.html', {root: 'dist/dnic-frontend/'}),
+  res.sendFile('index.html', {root: 'dist/dnic196056/'}),
 );
 
 // Start the app by listening on the default Heroku port
